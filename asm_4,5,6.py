@@ -32,7 +32,7 @@ from sklearn.preprocessing import MinMaxScaler, LabelEncoder
 # 1. Scaling numerical (Min-Max)
 scaler = MinMaxScaler()
 data['price_scaled'] = scaler.fit_transform(data[['price_fixed']])
-
+           
 # 2. Label Encoding cho cột Categorical
 data['area_type'] = ['Urban', 'Rural', 'Urban', 'Suburb', 'Rural']
 le = LabelEncoder()
@@ -69,3 +69,5 @@ for i in range(len(descriptions)):
     for j in range(i + 1, len(descriptions)):
         if similarity_matrix[i][j] > 0.8:
             print(f"Gợi ý MERGE: Bản ghi {i} và {j} vì độ tương đồng = {similarity_matrix[i][j]:.2f}")
+
+
